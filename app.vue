@@ -1,5 +1,8 @@
 <script setup>
 const route = useRouter()
+useSeoMeta({
+  title: 'CoffeShop'
+})
 </script>
 
 <template>
@@ -7,3 +10,9 @@ const route = useRouter()
     <NuxtPage :key="route.path" />
   </NuxtLayout>
 </template>
+
+<style>
+  body {
+    background-color: #29241F;
+  }
+</style>
