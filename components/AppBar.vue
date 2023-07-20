@@ -10,9 +10,9 @@ console.log('current name', route.fullPath)
 </script>
 
 <template>
-  <nav class="color-white p-4 flex flex-items-start flex-justify-between m-12">
+  <nav class="text-white flex m-12">
     <img class="h-24 w-25" src="/assets/logo2.png" alt="Logo" />
-      <ul class="navbar__menu list-none flex flex-items-start p-0 m-6 ml-auto">
+      <ul class="navbar__menu flex m-6 ml-auto">
         <li :class="{ 'navbar__menu__item--active': activeTab === 'home' }">
           <a href="#" @click="changeTab('home')">Home</a>
         </li>
@@ -26,7 +26,9 @@ console.log('current name', route.fullPath)
           <a href="#" @click="changeTab('contact')">Contact</a>
         </li>
       </ul>
-      <button class="p-2 p-xy m-2 color-white bg-#29241F b-2 b-rd-1 b-white b-solid cursor-pointer hover-bg-white hover-color-#29241F" @click="$router.push('/login')">Get Started</button>
+      <div class="m-4">
+        <button class="p-2 m-auto text-white bg-primary-26 border-2 rounded-2xl border-white border-solid cursor-pointer hover:bg-white hover:text-primary-25" @click="$router.push('/login')">Get Started</button>
+      </div>
   </nav>
 </template>
 

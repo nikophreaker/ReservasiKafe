@@ -19,8 +19,8 @@ const { data, error, pending } = await useAPIFetch("/menus", {
 })
 </script>
 <template>
-<div class="position-relative">
-    <img class="position-absolute -z-1 right-0" src="/assets/kopi-bijik.png" >
+<div class="relative">
+    <img class="absolute -z-10 right-0" src="/assets/kopi-bijik.png" >
     <AppBar />
     <div class="container mx-auto grid grid-cols-4 gap-8">
       <div class="bg-white" v-for="{item_name, photo, description, price} in data" >

@@ -1,9 +1,16 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    function isAuthenticated() {
-        return true
+    const store = useTokenStore()
+    function isAuthenticatedAdmin() {
+        console.log(store.userRole === "admin");
+        return store.userRole === "admin"
+    }
+
+    function isAuthenticatedUser() {
+        console.log(store.userRole === "customer");
+        return store.userRole === "customer"
     }
     
-    if(isAuthenticated() === true) {
-        return navigateTo('/');
-    }
+    // if(!isAuthenticatedAdmin() === true) {
+    //     return navigateTo('/');
+    // }
 })
