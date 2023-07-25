@@ -1,6 +1,6 @@
 <script setup lang='ts'>
     useSeoMeta({
-      title: 'Login CoffeShop'
+      title: 'Register CoffeShop'
     })
 </script>
 

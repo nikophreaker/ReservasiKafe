@@ -1,22 +1,34 @@
-<script>
-import { Bar, Line } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+<script lang="ts">
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js'
+import { Line } from 'vue-chartjs'
+import * as chartConfig from '/server/api/chart'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 export default {
-  name: 'BarChart',
-  components: { Bar },
+  name: 'App',
+  components: {
+    Line
+  },
   data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March' ],
-        datasets: [ { data: [40, 20, 12] } ]
-      },
-      chartOptions: {
-        responsive: true
-      }
-    }
+    return chartConfig
   }
 }
 </script>
@@ -41,9 +53,10 @@ export default {
       <!-- Chart -->
       <div class="relative h-350-px">
         <!-- <canvas id="line-chart"></canvas> -->
-        <Bar class="bg-blueGray-700" id="my-chart-id" :options="chartOptions" :data="chartData">
+        <Line class="bg-blueGray-700" :data="data" :options="options" />
+        <!-- <Bar class="bg-blueGray-700" id="my-chart-id" :options="chartOptions" :data="chartData">
 
-        </Bar>
+        </Bar> -->
       </div>
     </div>
   </div>

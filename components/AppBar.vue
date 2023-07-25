@@ -27,7 +27,7 @@ console.log('current name', route.fullPath)
         </li>
       </ul>
       <div class="m-4">
-        <button class="p-2 m-auto text-white bg-primary-26 border-2 rounded-2xl border-white border-solid cursor-pointer hover:bg-white hover:text-primary-25" @click="$router.push('/auth')">Get Started</button>
+        <button class="p-2 m-auto text-white bg-primary-26 border-2 rounded-2xl border-white border-solid cursor-pointer hover:bg-white hover:text-primary-25" @click="$router.push('/auth/login')">Get Started</button>
       </div>
   </nav>
 </template>
