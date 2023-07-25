@@ -1,10 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  build: { transpile: ["@fawmi/vue-google-maps"] },
   ssr: false,
   devtools: { enabled: true },
   imports: {
     dirs: ['stores']
   },
+  // optimizeDeps: {
+  //   // fast-deep-equal doesnt have default export
+  //   // https://github.com/vitejs/vite/issues/2679
+  //   include: ['@apollo/client/core', '@apollo/client/cache', '@apollo/client/link/context', 'fast-deep-equal'],
+  //   exclude: ['@apollo/react'],
+  // },
   modules: [
     '@nuxtjs/tailwindcss',
     // '@unocss/nuxt',
@@ -13,6 +20,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseUrl: process.env.BASE_URL || 'http://localhost:8000/api',
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY || 'AIzaSyBpbGDauyaUGh1An6TwIcwEfHxLwKy_C4U',
     },
   },
   pinia: {

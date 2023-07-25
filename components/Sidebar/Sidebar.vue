@@ -14,12 +14,12 @@
         <i class="fas fa-bars"></i>
       </button>
       <!-- Brand -->
-      <RouterLink
+      <NuxtLink
         class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
         to="/"
       >
         Vue Notus
-      </RouterLink>
+      </NuxtLink>
       <!-- User -->
       <ul class="md:hidden items-center flex flex-wrap list-none">
         <li class="inline-block relative">
@@ -40,12 +40,12 @@
         >
           <div class="flex flex-wrap">
             <div class="w-6/12">
-              <RouterLink
+              <NuxtLink
                 class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                 to="/"
               >
                 Vue Notus
-              </RouterLink>
+              </NuxtLink>
             </div>
             <div class="w-6/12 flex justify-end">
               <button
@@ -81,7 +81,7 @@
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               to="/admin/dashboard"
               v-slot="{ href, navigate, isActive }"
             >
@@ -101,11 +101,11 @@
                 ></i>
                 Dashboard
               </a>
-            </RouterLink>
+            </NuxtLink>
           </li>
 
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               to="/admin/settings"
               v-slot="{ href, navigate, isActive }"
             >
@@ -125,11 +125,11 @@
                 ></i>
                 Settings
               </a>
-            </RouterLink>
+            </NuxtLink>
           </li>
 
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               to="/admin/tables"
               v-slot="{ href, navigate, isActive }"
             >
@@ -149,11 +149,11 @@
                 ></i>
                 Tables
               </a>
-            </RouterLink>
+            </NuxtLink>
           </li>
 
           <li class="items-center">
-            <RouterLink to="/admin/maps" v-slot="{ href, navigate, isActive }">
+            <NuxtLink to="/admin/maps" v-slot="{ href, navigate, isActive }">
               <a
                 :href="href"
                 @click="navigate"
@@ -170,7 +170,7 @@
                 ></i>
                 Maps
               </a>
-            </RouterLink>
+            </NuxtLink>
           </li>
         </ul>
 
@@ -186,17 +186,17 @@
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/auth/login"
             >
               <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
               Login
-            </RouterLink>
+            </NuxtLink>
           </li>
 
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/auth/register"
             >
@@ -204,7 +204,7 @@
                 class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"
               ></i>
               Register
-            </RouterLink>
+            </NuxtLink>
           </li>
         </ul>
 
@@ -220,23 +220,23 @@
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/landing"
             >
               <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
               Landing Page
-            </RouterLink>
+            </NuxtLink>
           </li>
 
           <li class="items-center">
-            <RouterLink
+            <NuxtLink
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/profile"
             >
               <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
               Profile Page
-            </RouterLink>
+            </NuxtLink>
           </li>
         </ul>
 

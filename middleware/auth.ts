@@ -10,7 +10,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
         return store.userRole === "customer"
     }
     
-    // if(!isAuthenticatedAdmin() === true) {
-    //     return navigateTo('/');
-    // }
+    if(!isAuthenticatedAdmin() === true) {
+        return navigateTo('/');
+    }
 })
