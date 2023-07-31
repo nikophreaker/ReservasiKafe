@@ -10,7 +10,7 @@
             class="font-semibold text-lg"
             :class="[color === 'light' ? 'text-blueGray-700' : 'text-white']"
           >
-            Card Tables
+            {{ title || "Card Tables"}}
           </h3>
         </div>
       </div>
@@ -81,12 +81,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-            >
+          <tr
+            v-for="{ id, item_name, photo, price } in item"
+            :key="id"
+          >
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
               <img
-                :src="bootstrap"
+                :src=" photo || bootstrap"
                 class="h-12 w-12 bg-white rounded-full border"
                 alt="..."
               />
@@ -96,22 +97,16 @@
                   color === 'light' ? 'text-blueGray-600' : 'text-white',
                 ]"
               >
-                Argon Design System
+                {{ item_name || "Argon Design System"}}
               </span>
             </th>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              $2,500 USD
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+              {{ price || "$2,500 USD"}}
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <i class="fas fa-circle text-orange-500 mr-2"></i> pending
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex">
                 <img
                   :src="team1"
@@ -135,15 +130,11 @@
                 />
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex items-center">
                 <span class="mr-2">60%</span>
                 <div class="relative w-full">
-                  <div
-                    class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
-                  >
+                  <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
                     <div
                       style="width: 60%;"
                       class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
@@ -152,16 +143,12 @@
                 </div>
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
               <table-dropdown />
             </td>
           </tr>
-          <tr>
-            <th
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-            >
+          <!-- <tr>
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
               <img
                 :src="angular"
                 class="h-12 w-12 bg-white rounded-full border"
@@ -176,20 +163,14 @@
                 Angular Now UI Kit PRO
               </span>
             </th>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               $1,800 USD
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <i class="fas fa-circle text-emerald-500 mr-2"></i>
               completed
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex">
                 <img
                   :src="team1"
@@ -213,15 +194,11 @@
                 />
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex items-center">
                 <span class="mr-2">100%</span>
                 <div class="relative w-full">
-                  <div
-                    class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200"
-                  >
+                  <div class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
                     <div
                       style="width: 100%;"
                       class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
@@ -230,16 +207,12 @@
                 </div>
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
               <table-dropdown />
             </td>
           </tr>
           <tr>
-            <th
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-            >
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
               <img
                 :src="sketch"
                 class="h-12 w-12 bg-white rounded-full border"
@@ -254,19 +227,13 @@
                 Black Dashboard Sketch
               </span>
             </th>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               $3,150 USD
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <i class="fas fa-circle text-red-500 mr-2"></i> delayed
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex">
                 <img
                   :src="team1"
@@ -290,15 +257,11 @@
                 />
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex items-center">
                 <span class="mr-2">73%</span>
                 <div class="relative w-full">
-                  <div
-                    class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
-                  >
+                  <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
                     <div
                       style="width: 73%;"
                       class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
@@ -307,16 +270,12 @@
                 </div>
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
               <table-dropdown />
             </td>
           </tr>
           <tr>
-            <th
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-            >
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
               <img
                 :src="react"
                 class="h-12 w-12 bg-white rounded-full border"
@@ -331,19 +290,13 @@
                 React Material Dashboard
               </span>
             </th>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               $4,400 USD
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <i class="fas fa-circle text-teal-500 mr-2"></i> on schedule
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex">
                 <img
                   :src="team1"
@@ -367,15 +320,11 @@
                 />
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex items-center">
                 <span class="mr-2">90%</span>
                 <div class="relative w-full">
-                  <div
-                    class="overflow-hidden h-2 text-xs flex rounded bg-teal-200"
-                  >
+                  <div class="overflow-hidden h-2 text-xs flex rounded bg-teal-200">
                     <div
                       style="width: 90%;"
                       class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
@@ -384,16 +333,12 @@
                 </div>
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
               <table-dropdown />
             </td>
           </tr>
           <tr>
-            <th
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-            >
+            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
               <img
                 :src="vue"
                 class="h-12 w-12 bg-white rounded-full border"
@@ -408,20 +353,14 @@
                 React Material Dashboard
               </span>
             </th>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               $2,200 USD
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <i class="fas fa-circle text-emerald-500 mr-2"></i>
               completed
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex">
                 <img
                   :src="team1"
@@ -445,15 +384,11 @@
                 />
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
               <div class="flex items-center">
                 <span class="mr-2">100%</span>
                 <div class="relative w-full">
-                  <div
-                    class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200"
-                  >
+                  <div class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
                     <div
                       style="width: 100%;"
                       class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
@@ -462,12 +397,10 @@
                 </div>
               </div>
             </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-            >
+            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
               <table-dropdown />
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
@@ -505,6 +438,11 @@ export default {
     TableDropdown,
   },
   props: {
+    title: "",
+    item: {
+      type: Array,
+      default: () => [],
+    },
     color: {
       default: "light",
       validator: function (value) {

@@ -42,14 +42,15 @@
         href="javascript:void(0);"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Something else here
-      </a>
-      <div class="h-0 my-2 border border-solid border-blueGray-100" />
-      <a
-        href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-      >
-        Seprated link
+                Anoanother action
+              </a>
+              <div class="h-0 my-2 border border-solid border-blueGray-100" />
+              <a
+                href="javascript:void(0);"
+                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                v-on:click="logout($event)"
+              >
+                Sign Out
       </a>
     </div>
   </div>
@@ -60,7 +61,7 @@ import { createPopper } from "@popperjs/core";
 
 import image from "@/assets/img/team-1-800x800.jpg";
 
-export default {
+export default defineNuxtComponent({
   data() {
     return {
       dropdownPopoverShow: false,
@@ -79,6 +80,15 @@ export default {
         });
       }
     },
+    logout: function (event) {
+      event.preventDefault();
+      const store = useTokenStore()
+      if (store.userToken != "" || store.userToken != undefined || store.userToken != null) {
+        store.saveToken("")
+        store.setRole("")
+        navigateTo("/")
+      }
+    }
   },
-};
+})
 </script>

@@ -32,19 +32,12 @@
       </form>
       <!-- User -->
       <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-        <user-dropdown />
+        <DropdownsUserDropdown />
       </ul>
     </div>
   </nav>
   <!-- End Navbar -->
 </template>
 
-<script>
-import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
-
-export default {
-  components: {
-    UserDropdown,
-  },
-};
+<script setup>
 </script>

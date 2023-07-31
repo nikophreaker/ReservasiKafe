@@ -44,7 +44,7 @@
         </ul>
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
           <li class="flex items-center">
-            <index-dropdown />
+            <DropdownsIndexDropdown />
           </li>
           <li class="flex items-center">
             <a
@@ -94,7 +94,6 @@
 </template>
 
 <script>
-import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
 
 export default {
   data() {
@@ -106,9 +105,6 @@ export default {
     setNavbarOpen: function () {
       this.navbarOpen = !this.navbarOpen;
     },
-  },
-  components: {
-    IndexDropdown,
   },
 };
 </script>

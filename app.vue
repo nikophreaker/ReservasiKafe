@@ -1,8 +1,8 @@
 <script setup>
-const route = useRouter()
+const route = useRouter();
 useSeoMeta({
-  title: 'CoffeShop'
-})
+  title: "Reservasi",
+});
 </script>
 
 <template>
@@ -12,7 +12,7 @@ useSeoMeta({
 </template>
 
 <style>
-  body {
-    background-color: #29241F;
-  }
+body {
+  background-color: #29241f;
+}
 </style>
